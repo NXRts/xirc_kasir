@@ -60,4 +60,5 @@ Password : kasir
 
 Silahkan gunakan aplikasi ini dengan bijak
 
-happy codings
+*Tes Commit*
+Mengetes Commit dari VS Code
