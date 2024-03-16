@@ -59,3 +59,5 @@ Password : kasir
 ![Dashboard](https://ibb.co/JFsRVQF)
 
 Silahkan gunakan aplikasi ini dengan bijak
+
+happy codings
