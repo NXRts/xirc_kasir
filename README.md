@@ -56,9 +56,6 @@ Password : kasir
 
 ## Screenshot
 
-![Dashboard](https://ibb.co/JFsRVQF)
+![Dashboard](https://s9.gifyu.com/images/SFe7F.png)
 
 Silahkan gunakan aplikasi ini dengan bijak
-
-*Tes Commit*
-Mengetes Commit dari VS Code
