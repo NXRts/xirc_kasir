@@ -80,7 +80,6 @@
                                 <td>Rp. <?= number_format($total); ?></td>
                             </tr>
                         </tbody>
-
                     </table>
                 </div>
                 <hr>
