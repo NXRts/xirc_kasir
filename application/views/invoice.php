@@ -87,7 +87,7 @@
                 <br>
                 <div class="row">
                     <div class="col-xl-10">
-                        <p>Thank you for your purchase</p>
+                        <p>Terima kasih sudah berbelanja</p>
                     </div>
                 </div>
             </div>
