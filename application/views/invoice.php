@@ -7,7 +7,7 @@
                     <p style="color: #7e8d9f;font-size: 20px;">Invoice >> <strong>ID: #123-123</strong></p>
                 </div>
                 <div class="col-xl-3 float-end">
-                    <a onclick="window.print()" class="btn btn-light text-capitalize border-0" data-mdb-ripple-color="dark">
+                    <a href="<?= base_url('penjualan/print/'.$nota); ?>" target="_blank" class="btn btn-light text-capitalize border-0" data-mdb-ripple-color="dark">
                         <i class="fas fa-print text-primary"> Print</i>
                         <a class="btn btn-light text-capitalize" data-mdb-ripple-color="dark"><i class="far fa-file-pdf text-danger"></i> Export</a>
                     </a>

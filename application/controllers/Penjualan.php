@@ -320,8 +320,27 @@ class Penjualan extends CI_Controller
 		$this->template->load('template', 'invoice', $data);
 	}
 
-	public function print()
+	public function print($kode_penjualan)
 	{
-		redirect($_SERVER['HTTP_REFERER']);
+		$this->db->select('*');
+		$this->db->from('penjualan a')->order_by('a.tanggal', 'DESC')->where('a.kode_penjualan', $kode_penjualan);
+		$this->db->join('pelanggan b', 'a.id_pelanggan=b.id_pelanggan', 'left');
+		$penjualan = $this->db->get()->row();
+
+
+		$this->db->from('detail_penjualan a');
+		$this->db->join('produk b', 'a.id_produk=b.id_produk', 'left');
+		$this->db->where('a.kode_penjualan', $kode_penjualan);
+		$detail = $this->db->get()->result_array();
+
+		$data = array(
+			'judul_halaman' 	=> 'XIRC | KASIR | Invoice',
+			'nota' 				=> $kode_penjualan,
+			'penjualan' 		=> $penjualan,
+			'detail'  			=> $detail,
+			'tanggal' 			=> date('Y-m-d'),
+
+		);
+		$this->load->view('struk', $data);
 	}
 }
