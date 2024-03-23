@@ -53,4 +53,8 @@
     ==============================  <br>
     jumlah item : <?= $item?> PCS<br>
 </body>
+
+<script>
+    window.print();
+</script>
 </html>
