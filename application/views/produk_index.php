@@ -3,6 +3,9 @@
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
         Tambah Produk
     </button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#printmodal">
+        Print
+    </button>
 </div>
 <?= $this->session->flashdata('notivikasi'); ?>
 
@@ -98,4 +101,37 @@
         </table>
     </div>
     <!-- /.card-body -->
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="printmodal" tabindex="-1" role="dialog" aria-labelledby="printmodalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="printmodalLabel">Laporan Produk</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="<?= base_url('produk/print') ?>" method="get" target="_blank"> 
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col mb-3">
+                            <label class="form-label">Stok Produk</label>
+                            <select name="status" class="form-control">
+                                <option value="Ada">Ada</option>
+                                <option value="Habis">Habis</option>
+                                <option value="Semua">Semua</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Print</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
 </div>

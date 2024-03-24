@@ -107,4 +107,21 @@ class Produk extends CI_Controller
         ');
         redirect('produk');
     }
+
+    public function print(){
+        $this->db->select('*')->from('produk');
+        $this->db->order_by('nama_produk', 'ASC');
+        $status = $this->input->get('status');
+        if($status=='Ada'){
+            $this->db->where('stok > ' ,0);
+        } else if($status=='Habis'){
+            $this->db->where('stok' ,0);
+        }
+        $produk = $this->db->get()->result_array();
+        $data = array(
+            'status'            => $status,
+            'produk'            => $produk,
+        );
+        $this->load->view('print_produk', $data);
+    }
 }
