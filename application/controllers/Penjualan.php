@@ -343,4 +343,22 @@ class Penjualan extends CI_Controller
 		);
 		$this->load->view('struk', $data);
 	}
+
+	public function laporan(){
+		$tanggal1 = $this->input->get('tanggal1');
+		$tanggal2 = $this->input->get('tanggal2');
+		date_default_timezone_set("Asia/Jakarta");
+		$this->db->select('*');
+		$this->db->from('penjualan a')->order_by('a.tanggal', 'DESC');
+		$this->db->join('pelanggan b', 'a.id_pelanggan=b.id_pelanggan', 'left');
+		$this->db->where('tanggal >=',$tanggal1);
+		$this->db->where('tanggal <=',$tanggal2);
+		$penjualan = $this->db->get()->result_array();
+		$data = array(
+			'tanggal1' => $tanggal1,
+			'tanggal2' => $tanggal2,
+			'penjualan'=> $penjualan,
+		);
+		$this->load->view('laporan', $data);
+	}
 }

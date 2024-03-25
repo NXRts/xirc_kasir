@@ -4,7 +4,7 @@
         Tambah Produk
     </button>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#printmodal">
-        Print
+        Laporan Produk
     </button>
 </div>
 <?= $this->session->flashdata('notivikasi'); ?>
